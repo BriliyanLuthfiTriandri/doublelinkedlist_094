@@ -37,7 +37,7 @@ void DoubleLinkedlist::addNode() {
 	newNode->noMhs = nim; //step 2
 	newNode->name = nm; //step 2
 
-	/*insert a node in the begining of a doubly - Linked List*/
+	/*insert a node in the begining o a doubly - Linked List*/
 	if (START == NULL || nim <= START->noMhs) { //check if data null
 		if (START != NULL && nim == START->noMhs) {
 			cout << "\nDuplicate number not allowed" << endl;
@@ -81,4 +81,20 @@ bool DoubleLinkedlist::search(int rollNo, Node** previous, Node** current) {
 	}
 	return (*current != NULL);
 }
+
+bool DoubleLinkedlist::deleteNode(int rollNo) {
+	Node* previous, * current;
+	previous = current = NULL;
+	if (search(rollNo, &previous, &current) == false)
+		return false;
+	if (current->next != NULL)
+		current->next->prev = previous; //step 2
+	if (previous != NULL)
+		previous->next = current->next; // step 3
+	else
+		START = current->next;
+
+	delete current; //step 4
+	return true;
+} 
 
