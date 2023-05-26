@@ -98,3 +98,7 @@ bool DoubleLinkedlist::deleteNode(int rollNo) {
 	return true;
 } 
 
+bool DoubleLinkedlist::listEmpty() {
+	return (START == NULL);
+}
+
