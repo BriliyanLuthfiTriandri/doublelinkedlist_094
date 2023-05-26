@@ -145,7 +145,7 @@ void DoubleLinkedlist::hapus() {
 	if (DoubleLinkedlist::deleteNode(rollNo) == false)
 		cout << "Record not found" << endl;
 	else
-		cout << "Record with roll number: " << rollNo << " deleted" << endl;
+		cout << "Record with roll number: " << rollNo << "deleted" << endl;
 }
 void DoubleLinkedlist::searchData() {
 	if (listEmpty() == true) {
